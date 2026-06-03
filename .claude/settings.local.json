@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(./*)",
+      "Bash(python3 -c *)",
+      "Bash(python -c *)",
+      "Bash(find *)",
+      "Bash(grep *)",
+      "Bash(ls *)",
+      "Bash(mkdir -p *)"
+    ],
+    "deny": [
+      "Read(PROMPT.md)"
+    ]
+  }
+}

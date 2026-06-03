@@ -1,0 +1,8 @@
+__pycache__/
+workspace/*
+!workspace/script_plan_refs/
+!workspace/script_plan_refs/**
+knowledge/*/row/
+knowledge/*/*/row/
+knowledge/*/json/
+knowledge/*/*/json/
