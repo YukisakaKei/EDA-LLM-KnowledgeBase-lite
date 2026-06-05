@@ -1,5 +1,5 @@
 ---
-source: knowledge/Innovus/legacy/json/innovusUG__211 | chapters: [0623, 0624, 0107, 0108, 0109, 0670, 0671, 0672, 0698, 0700, 0704, 0715]
+source: knowledge/Innovus/legacy/jsonl/innovusUG__211.jsonl | entries: [0623, 0624, 0107, 0108, 0109, 0670, 0671, 0672, 0698, 0700, 0704, 0715]
 ---
 
 # 布线命令快速参考

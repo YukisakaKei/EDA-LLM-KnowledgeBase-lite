@@ -1,6 +1,6 @@
 ---
-source: knowledge/Innovus/legacy/json/innovusTCR__211 | chapters: [0073, 0074, 0276, 0727, 0797, 1937, 2084]
-source: knowledge/Innovus/legacy/json/dbSchema__211 | chapters: [0034]
+source: knowledge/Innovus/legacy/jsonl/innovusTCR__211.jsonl | entries: [0073, 0074, 0276, 0727, 0797, 1937, 2084]
+source: knowledge/Innovus/legacy/jsonl/dbSchema__211.jsonl | entries: [0034]
 ---
 
 # Net/Wire 操作脚本指南

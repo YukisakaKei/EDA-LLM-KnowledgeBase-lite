@@ -1,5 +1,5 @@
 ---
-source: knowledge/Innovus/legacy/json/innovusUG__211 | chapters: [0103, 0172, 0173, 0174, 0175, 0176, 0177, 0178, 0179, 0180, 0181]
+source: knowledge/Innovus/legacy/jsonl/innovusUG__211.jsonl | entries: [0103, 0172, 0173, 0174, 0175, 0176, 0177, 0178, 0179, 0180, 0181]
 ---
 
 # SDC 约束语法和 MMMC 配置参考

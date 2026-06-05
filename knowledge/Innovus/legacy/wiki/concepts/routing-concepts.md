@@ -1,5 +1,5 @@
 ---
-source: knowledge/Innovus/legacy/json/innovusUG__211 | chapters: [106, 107, 108, 624, 677, 679, 685, 756, 757, 762, 763, 765, 795, 807]
+source: knowledge/Innovus/legacy/jsonl/innovusUG__211.jsonl | entries: [106, 107, 108, 624, 677, 679, 685, 756, 757, 762, 763, 765, 795, 807]
 ---
 
 # 布线概念

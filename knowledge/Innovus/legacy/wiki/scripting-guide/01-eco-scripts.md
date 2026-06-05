@@ -1,5 +1,5 @@
 ---
-source: knowledge/Innovus/legacy/json/innovusTCR__211 | chapters: [0814, 0815, 0818, 0795, 0797, 0801, 0812, 0832]
+source: knowledge/Innovus/legacy/jsonl/innovusTCR__211.jsonl | entries: [0814, 0815, 0818, 0795, 0797, 0801, 0812, 0832]
 ---
 
 # ECO 脚本编写指南

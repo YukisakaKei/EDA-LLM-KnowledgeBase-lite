@@ -1,7 +1,7 @@
 ---
-source: knowledge/Voltus/legacy/json/voltusUG__211 | chapters: [0030, 0031, 0032, 0033, 0034, 0035, 0036, 0037, 0038, 0039, 0040, 0041, 0042, 0043, 0044, 0045, 0046, 0047, 0048, 0049, 0050]
-source: knowledge/Voltus/legacy/json/voltusUG__211 | chapters: [0070, 0071, 0072, 0073]
-source: knowledge/Voltus/legacy/json/voltusUG__211 | chapters: [0137]
+source: knowledge/Voltus/legacy/jsonl/voltusUG__211.jsonl | entries: [0030, 0031, 0032, 0033, 0034, 0035, 0036, 0037, 0038, 0039, 0040, 0041, 0042, 0043, 0044, 0045, 0046, 0047, 0048, 0049, 0050]
+source: knowledge/Voltus/legacy/jsonl/voltusUG__211.jsonl | entries: [0070, 0071, 0072, 0073]
+source: knowledge/Voltus/legacy/jsonl/voltusUG__211.jsonl | entries: [0137]
 ---
 
 # GUI 与设计导入（Voltus）

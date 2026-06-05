@@ -1,5 +1,5 @@
 ---
-source: knowledge/Innovus/legacy/json/innovusUG__211 | chapters: [126, 127, 128, 129, 130, 131, 136, 137, 138, 139, 140, 141, 142]
+source: knowledge/Innovus/legacy/jsonl/innovusUG__211.jsonl | entries: [126, 127, 128, 129, 130, 131, 136, 137, 138, 139, 140, 141, 142]
 ---
 
 # 分层设计概念

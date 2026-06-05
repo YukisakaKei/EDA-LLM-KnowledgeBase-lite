@@ -9,8 +9,8 @@
 | 来源 | 说明 |
 |------|------|
 | `knowledge/Innovus/legacy/eda_scripts/innovus_gift__211/` | 188 个示例脚本，**仅供思路参考，不是语法权威** |
-| `knowledge/Innovus/legacy/json/dbSchema__211/` | DB 对象模型，**属性名与合法值的权威来源** |
-| `knowledge/Innovus/legacy/json/innovusTCR__211/` | Tcl 命令参考，**命令名与参数签名的权威来源** |
+| `knowledge/Innovus/legacy/jsonl/dbSchema__211.jsonl` | DB 对象模型，**属性名与合法值的权威来源** |
+| `knowledge/Innovus/legacy/jsonl/innovusTCR__211.jsonl` | Tcl 命令参考，**命令名与参数签名的权威来源** |
 
 ---
 
@@ -219,8 +219,8 @@ dbGet -p2 top.insts.cell.baseClass block   ;# 快速过滤 block inst
 
 ```
 ---
-source: knowledge/Innovus/legacy/json/dbSchema__211 | ...
-source: knowledge/Innovus/legacy/json/innovusTCR__211 | ...
+source: knowledge/Innovus/legacy/jsonl/dbSchema__211.jsonl | ...
+source: knowledge/Innovus/legacy/jsonl/innovusTCR__211.jsonl | ...
 ---
 
 # 标题

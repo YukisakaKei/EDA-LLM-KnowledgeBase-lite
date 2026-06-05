@@ -1,5 +1,5 @@
 ---
-source: knowledge/Innovus/legacy/json/innovusUG__211 | chapters: [0470, 0471, 0472, 0473, 0474, 0475, 0476, 1320]
+source: knowledge/Innovus/legacy/jsonl/innovusUG__211.jsonl | entries: [0470, 0471, 0472, 0473, 0474, 0475, 0476, 1320]
 ---
 
 # CCOpt 属性系统

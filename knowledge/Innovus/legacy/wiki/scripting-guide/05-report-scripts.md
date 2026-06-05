@@ -1,6 +1,6 @@
 ---
-source: knowledge/Innovus/legacy/json/innovusTCR__211 | chapters: [0012, 0013, 0026, 0035, 0040, 0073]
-source: knowledge/Innovus/legacy/json/dbSchema__211 | chapters: [0023, 0027]
+source: knowledge/Innovus/legacy/jsonl/innovusTCR__211.jsonl | entries: [0012, 0013, 0026, 0035, 0040, 0073]
+source: knowledge/Innovus/legacy/jsonl/dbSchema__211.jsonl | entries: [0023, 0027]
 ---
 
 # Report 脚本指南 — 查找与报告

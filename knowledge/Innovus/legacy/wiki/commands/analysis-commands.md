@@ -1,5 +1,5 @@
 ---
-source: knowledge/Innovus/legacy/json/innovusUG__211 | chapters: [0086, 0111, 0175, 0628, 1030, 1133, 1137, 1142, 1143]
+source: knowledge/Innovus/legacy/jsonl/innovusUG__211.jsonl | entries: [0086, 0111, 0175, 0628, 1030, 1133, 1137, 1142, 1143]
 ---
 
 # 分析命令

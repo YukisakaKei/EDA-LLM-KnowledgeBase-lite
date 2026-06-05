@@ -1,5 +1,5 @@
 ---
-source: knowledge/Voltus/legacy/json/voltusUG__211 | chapters: [0341]
+source: knowledge/Voltus/legacy/jsonl/voltusUG__211.jsonl | entries: [0341]
 ---
 
 # Voltus 术语表

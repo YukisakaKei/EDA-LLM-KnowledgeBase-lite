@@ -1,5 +1,5 @@
 ---
-source: knowledge/Innovus/legacy/json/innovusUG__211 | chapters: [0120, 0132, 0133, 0134, 0135]
+source: knowledge/Innovus/legacy/jsonl/innovusUG__211.jsonl | entries: [0120, 0132, 0133, 0134, 0135]
 ---
 
 # Prototyping Flow

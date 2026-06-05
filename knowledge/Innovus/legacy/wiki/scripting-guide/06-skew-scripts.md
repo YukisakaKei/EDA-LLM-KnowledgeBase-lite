@@ -1,14 +1,14 @@
 ---
-source: knowledge/Innovus/legacy/json/innovusTCR__211 | chapters: [0187, 0158, 0129, 1607]
-source: knowledge/Innovus/legacy/json/innovusUG__211 | chapters: [0485]
-source: knowledge/Innovus/legacy/json/dbSchema__211 | chapters: [0026, 0034]
+source: knowledge/Innovus/legacy/jsonl/innovusTCR__211.jsonl | entries: [0187, 0158, 0129, 1607]
+source: knowledge/Innovus/legacy/jsonl/innovusUG__211.jsonl | entries: [0485]
+source: knowledge/Innovus/legacy/jsonl/dbSchema__211.jsonl | entries: [0026, 0034]
 ---
 
 # Skew 与时钟树属性脚本指南
 
 Innovus 21.1 中通过 CCOpt 属性系统和 SDC 约束控制时钟树 skew、插入延迟和 ICG 时序。
 
-> **完整 CCOpt Property 参考**：`knowledge/Innovus/legacy/json/innovusUG__211/chapter_1320.json`（9222 行，仅在需要查询特定 property 时打开）
+> **完整 CCOpt Property 参考**：`knowledge/Innovus/legacy/jsonl/innovusUG__211.jsonl` entry index=1320（仅在需要查询特定 property 时打开）
 
 ---
 

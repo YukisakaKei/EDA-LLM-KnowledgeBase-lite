@@ -1,5 +1,5 @@
 ---
-source: knowledge/Voltus/legacy/json/voltusUG__211 | chapters: [0334, 0335, 0336, 0337, 0338, 0339, 0340]
+source: knowledge/Voltus/legacy/jsonl/voltusUG__211.jsonl | entries: [0334, 0335, 0336, 0337, 0338, 0339, 0340]
 ---
 
 # GDS2DEF 工具与 TRIM Metals 层配置

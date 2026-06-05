@@ -1,5 +1,5 @@
 ---
-source: knowledge/Innovus/legacy/json/innovusUG__211 | chapters: [0341, 0600, 0612, 0613, 0661, 0662, 0663]
+source: knowledge/Innovus/legacy/jsonl/innovusUG__211.jsonl | entries: [0341, 0600, 0612, 0613, 0661, 0662, 0663]
 ---
 
 # ECO 流程完全指南

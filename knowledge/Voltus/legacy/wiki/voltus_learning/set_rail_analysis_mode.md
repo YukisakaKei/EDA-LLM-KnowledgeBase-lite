@@ -1,5 +1,5 @@
 ---
-source: knowledge/Voltus/legacy/json/voltustxtcmdref__211 | chapters: [0154]
+source: knowledge/Voltus/legacy/jsonl/voltustxtcmdref__211.jsonl | entries: [0154]
 ---
 
 # set_rail_analysis_mode 详解

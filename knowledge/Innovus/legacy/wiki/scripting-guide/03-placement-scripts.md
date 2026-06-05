@@ -1,6 +1,6 @@
 ---
-source: knowledge/Innovus/legacy/json/innovusTCR__211 | chapters: [0074, 1029, 1057, 1086, 1102, 1127]
-source: knowledge/Innovus/legacy/json/dbSchema__211 | chapters: [0026, 0032]
+source: knowledge/Innovus/legacy/jsonl/innovusTCR__211.jsonl | entries: [0074, 1029, 1057, 1086, 1102, 1127]
+source: knowledge/Innovus/legacy/jsonl/dbSchema__211.jsonl | entries: [0026, 0032]
 ---
 
 # Placement 脚本指南

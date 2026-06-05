@@ -1,6 +1,6 @@
 ---
-source: knowledge/Innovus/legacy/json/innovusTCR__211 | chapters: [0073, 0076, 0582]
-source: knowledge/Innovus/legacy/json/dbSchema__211 | chapters: [0026, 0034]
+source: knowledge/Innovus/legacy/jsonl/innovusTCR__211.jsonl | entries: [0073, 0076, 0582]
+source: knowledge/Innovus/legacy/jsonl/dbSchema__211.jsonl | entries: [0026, 0034]
 ---
 
 # 通用 Tcl 脚本模式

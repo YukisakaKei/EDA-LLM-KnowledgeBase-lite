@@ -1,5 +1,5 @@
 ---
-source: knowledge/Innovus/legacy/json/innovusUG__211 | chapters: [357, 358, 359, 360, 361, 362, 363, 364, 365, 366, 367, 368, 369, 370, 371, 372, 411, 412]
+source: knowledge/Innovus/legacy/jsonl/innovusUG__211.jsonl | entries: [357, 358, 359, 360, 361, 362, 363, 364, 365, 366, 367, 368, 369, 370, 371, 372, 411, 412]
 ---
 
 # 低功耗设计概念

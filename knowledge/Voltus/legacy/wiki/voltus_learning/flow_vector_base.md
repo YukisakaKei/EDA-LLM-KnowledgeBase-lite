@@ -1,5 +1,5 @@
 ---
-source: knowledge/Voltus/legacy/json/voltustxtcmdref__211 | chapters: [0016, 0019, 0022, 0023, 0034, 0037, 0096, 0099, 0107, 0109, 0121, 0150, 0152, 0153, 0154, 0175]
+source: knowledge/Voltus/legacy/jsonl/voltustxtcmdref__211.jsonl | entries: [0016, 0019, 0022, 0023, 0034, 0037, 0096, 0099, 0107, 0109, 0121, 0150, 0152, 0153, 0154, 0175]
 ---
 
 # Voltus 功耗分析学习笔记

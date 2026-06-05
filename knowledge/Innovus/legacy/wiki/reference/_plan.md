@@ -1,6 +1,6 @@
 # reference/ 提取计划
 
-JSON 根目录：`knowledge/Innovus/legacy/json/innovusUG__211/`
+JSONL 文件：`knowledge/Innovus/legacy/jsonl/innovusUG__211.jsonl`
 
 **数据来源**：从 toc.json 验证的真实章节号和标题
 

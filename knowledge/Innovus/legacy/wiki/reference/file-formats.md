@@ -1,5 +1,5 @@
 ---
-source: knowledge/Innovus/legacy/json/innovusUG__211 | chapters: [79, 80, 155, 156, 157, 160, 162, 163, 164, 178, 179, 181, 186, 187, 188, 190, 219, 221, 222, 224, 248, 323, 627, 738, 1207]
+source: knowledge/Innovus/legacy/jsonl/innovusUG__211.jsonl | entries: [79, 80, 155, 156, 157, 160, 162, 163, 164, 178, 179, 181, 186, 187, 188, 190, 219, 221, 222, 224, 248, 323, 627, 738, 1207]
 ---
 
 # Innovus 文件格式参考

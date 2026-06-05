@@ -1,5 +1,5 @@
 ---
-source: knowledge/Voltus/legacy/json/voltusUG__211 | chapters: [0142, 0143, 0144, 0145, 0146, 0147, 0148, 0149, 0150, 0151, 0152, 0153, 0154, 0155, 0156]
+source: knowledge/Voltus/legacy/jsonl/voltusUG__211.jsonl | entries: [0142, 0143, 0144, 0145, 0146, 0147, 0148, 0149, 0150, 0151, 0152, 0153, 0154, 0155, 0156]
 ---
 
 # 时间平均 Rail 和 EM 分析（Static Rail/EM Analysis）

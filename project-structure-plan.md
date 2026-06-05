@@ -3,9 +3,9 @@
 ## Context
 
 用户需要为 EDA-LLM-KnowkedgeBase 项目规划一套清晰的目录结构。该项目的核心目标是：
-- 将 EDA 工具手册（PDF/网页/MD）转换为 JSON 知识库，供 LLM 检索
+- 将 EDA 工具手册（PDF/网页/MD）转换为 JSONL 知识库，供 LLM 检索
 - 提供 workspace 供 AI 输出 EDA 脚本
-- 提供快速参考文件（可实时更新），从 JSON 中提炼关键内容
+- 提供快速参考文件（可实时更新），从 JSONL 中提炼关键内容
 - 提供 PDF 切片脚本
 - 提供 index.md 引导 AI 导航
 
@@ -26,14 +26,16 @@ EDA-LLM-KnowkedgeBase/
 │   ├── <topic>/                        # 例：sta_fundamentals
 │   │   ├── index.md                    # 当前板块导航
 │   │   ├── row/                        # 原始源文件（只读）
-│   │   ├── json/                       # 切片后 JSON（只读）
+│   │   ├── jsonl/                      # 切片后 JSONL（只读）
+│   │   ├── json/                       # 未迁移遗留 JSON 或迁移对照（只读）
 │   │   └── wiki/                       # 快速参考（可更新）
 │   │
 │   │   # --- 类型B：S 家工具（Synopsys）---
 │   ├── <s_tool>/                       # 例：primetime
 │   │   ├── index.md                    # 当前板块导航
 │   │   ├── row/                        # 原始源文件（只读）
-│   │   ├── json/                       # 切片后 JSON（只读）
+│   │   ├── jsonl/                      # 切片后 JSONL（只读）
+│   │   ├── json/                       # 未迁移遗留 JSON 或迁移对照（只读）
 │   │   ├── eda_scripts/                # 可供参考的 EDA 脚本
 │   │   └── wiki/                       # 快速参考（可更新）
 │   │
@@ -42,12 +44,14 @@ EDA-LLM-KnowkedgeBase/
 │       ├── index.md                    # 当前板块导航
 │       ├── legacy/
 │       │   ├── row/                    # 旧版 legacy 工具手册
-│       │   ├── json/
+│       │   ├── jsonl/
+│       │   ├── json/                   # 迁移对照/回滚副本
 │       │   ├── eda_scripts/
 │       │   └── wiki/
 │       └── cui/
 │           ├── row/                    # 新版 CUI 工具手册
-│           ├── json/
+│           ├── jsonl/
+│           ├── json/                   # 迁移对照/回滚副本
 │           ├── eda_scripts/
 │           └── wiki/
 │
@@ -65,11 +69,11 @@ EDA-LLM-KnowkedgeBase/
 
 ## 关键设计决策
 
-1. **row/ 和 json/ 只读**：生成后不修改，保证知识库稳定可溯源
-2. **wiki/ 可更新**：从 JSON 提炼的快速参考，AI 可直接读取，人工随时补充
+1. **row/、jsonl/ 和 json/ 只读**：生成后不修改，保证知识库稳定可溯源
+2. **wiki/ 可更新**：从 JSONL/JSON 提炼的快速参考，AI 可直接读取，人工随时补充
 3. **wiki 内容按源类型区分**：工具手册用 `commands.md + concepts.md + examples.md`，技术文章用 `summary.md`
 4. **三种板块类型模板**：knowledge/ 下每个子目录按所属类型套用对应模板，后续新增工具（sta、PR、Power 等）直接套用
-5. **C 家工具含两级分类**：legacy / cui 为顶层，各自下面再分 row/json/eda_scripts/wiki
+5. **C 家工具含两级分类**：legacy / cui 为顶层，各自下面再分 row/jsonl/eda_scripts/wiki
 6. **index.md 在根目录**：AI 每次对话优先读取，快速定位所需知识
 7. **scripts/ 与 knowledge/ 平级**：工具脚本独立管理，不混入知识库内容
 8. **workspace 单一公共目录**：个人使用无需隔离
@@ -86,7 +90,7 @@ EDA-LLM-KnowkedgeBase/
 
 各板块 `<board>/index.md`（板块导航）：
 - 板块简介
-- row/ / json/ / wiki/ 路径及内容说明
+- row/ / jsonl/ / wiki/ 路径及内容说明；未迁移遗留板块可额外说明 json/
 - C 家工具额外列出 legacy / cui / shared 的区分说明
 
 ---
@@ -94,5 +98,5 @@ EDA-LLM-KnowkedgeBase/
 ## 验证方式
 
 - 目录结构创建后，手动检查层级是否清晰
-- 用一个 PDF 走完完整流程：sources → 切片 → json → 生成 refs → index.md 更新
-- 让 AI 只读 index.md，验证能否准确导航到目标 JSON 文件
+- 用一个 PDF 走完完整流程：sources → 切片 → jsonl → 生成 wiki → index.md 更新
+- 让 AI 只读 index.md，验证能否准确导航到目标 JSONL 文件

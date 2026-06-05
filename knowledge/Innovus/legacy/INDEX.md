@@ -1,18 +1,21 @@
 # Innovus 知识库索引
 
-## JSON 切片内容（完整参考）
+## JSONL 切片内容（完整参考）
 
 ### innovusUG__211
-Innovus 用户指南，涵盖安装配置、设计流程、工具使用等完整内容。
+`jsonl/innovusUG__211.jsonl` — Innovus 用户指南，涵盖安装配置、设计流程、工具使用等完整内容。
 
 ### innovusTCR__211
-Innovus Tcl 命令参考 ，包含所有可用的 Tcl 命令及其语法说明。
+`jsonl/innovusTCR__211.jsonl` — Innovus Tcl 命令参考，包含所有可用的 Tcl 命令及其语法说明。
 
 ### innovusDBAref__211
-Innovus 数据库 API 参考，提供数据库查询和修改的 API 接口文档。
+`jsonl/innovusDBAref__211.jsonl` — Innovus 数据库 API 参考，提供数据库查询和修改的 API 接口文档。
 
 ### dbSchema__211
-Innovus 数据库架构，描述数据库对象结构和属性定义。
+`jsonl/dbSchema__211.jsonl` — Innovus 数据库架构，描述数据库对象结构和属性定义。
+
+### optDesign_vs_timeDesign
+`jsonl/optDesign_vs_timeDesign.jsonl` — optDesign -postRoute 与 timeDesign -postRoute 时序差异应用笔记。
 
 ---
 

@@ -1,5 +1,5 @@
 ---
-source: knowledge/Voltus/legacy/json/voltusUG__211 | chapters: [0101, 0102, 0103, 0104, 0105, 0106, 0107, 0108, 0109]
+source: knowledge/Voltus/legacy/jsonl/voltusUG__211.jsonl | entries: [0101, 0102, 0103, 0104, 0105, 0106, 0107, 0108, 0109]
 ---
 
 # Power-Grid Library Generation 基础

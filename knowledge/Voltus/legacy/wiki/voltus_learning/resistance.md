@@ -1,6 +1,6 @@
 ---
-source: knowledge/Voltus/legacy/json/voltusUG__211 | chapters: [0142, 0143, 0144, 0145, 0146, 0184, 0185, 0186, 0187, 0305, 0306, 0307]
-source: knowledge/Voltus/legacy/json/voltustxtcmdref__211 | chapters: [0154]
+source: knowledge/Voltus/legacy/jsonl/voltusUG__211.jsonl | entries: [0142, 0143, 0144, 0145, 0146, 0184, 0185, 0186, 0187, 0305, 0306, 0307]
+source: knowledge/Voltus/legacy/jsonl/voltustxtcmdref__211.jsonl | entries: [0154]
 ---
 
 # Voltus 中的 Resistance 类型汇总

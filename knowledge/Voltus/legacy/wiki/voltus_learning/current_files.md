@@ -1,7 +1,7 @@
 ---
-source: knowledge/Voltus/legacy/json/voltustxtcmdref__211 | chapters: [0095, 0107, 0422]
-source: knowledge/Voltus/cui/json/voltusTCRcom__211 | chapters: [0313, 0381]
-source: knowledge/Voltus/legacy/json/voltusUG__211 | chapters: [0133, 0165, 0206, 0240]
+source: knowledge/Voltus/legacy/jsonl/voltustxtcmdref__211.jsonl | entries: [0095, 0107, 0422]
+source: knowledge/Voltus/cui/jsonl/voltusTCRcom__211.jsonl | entries: [0313, 0381]
+source: knowledge/Voltus/legacy/jsonl/voltusUG__211.jsonl | entries: [0133, 0165, 0206, 0240]
 ---
 
 # Voltus 电流文件整理

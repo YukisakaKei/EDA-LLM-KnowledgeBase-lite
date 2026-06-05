@@ -1,5 +1,5 @@
 ---
-source: knowledge/Voltus/legacy/json/voltusUG__211 | chapters: [0128, 0129, 0130, 0131, 0132, 0133, 0134, 0135, 0136, 0137, 0138, 0139, 0140, 0141]
+source: knowledge/Voltus/legacy/jsonl/voltusUG__211.jsonl | entries: [0128, 0129, 0130, 0131, 0132, 0133, 0134, 0135, 0136, 0137, 0138, 0139, 0140, 0141]
 ---
 
 # 时间平均功耗计算（Static Power Calculation）

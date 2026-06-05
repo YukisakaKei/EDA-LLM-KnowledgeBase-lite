@@ -1,5 +1,5 @@
 ---
-source: knowledge/Innovus/legacy/json/innovusUG__211 | chapters: [0357, 0359, 0360, 0361, 0362, 0363, 0370, 0374, 0376, 0377, 0378, 0379, 0407, 0412]
+source: knowledge/Innovus/legacy/jsonl/innovusUG__211.jsonl | entries: [0357, 0359, 0360, 0361, 0362, 0363, 0370, 0374, 0376, 0377, 0378, 0379, 0407, 0412]
 ---
 
 # 电源命令快速参考

@@ -1,15 +1,15 @@
 # Voltus 知识库索引
 
-## JSON 切片内容（完整参考）
+## JSONL 切片内容（完整参考）
 
 ### voltusKPNS__211
-Voltus 已知问题与解决方案文档，描述 Voltus IC Power Integrity Solution 的重要 Cadence Change Requests (CCRs)，并提供问题解决方案和变通方法。
+`jsonl/voltusKPNS__211.jsonl` — Voltus 已知问题与解决方案文档，描述 Voltus IC Power Integrity Solution 的重要 Cadence Change Requests (CCRs)，并提供问题解决方案和变通方法。
 
 ### voltustxtcmdref__211
-Voltus 文本命令参考手册，描述 Voltus IC Power Integrity Solution 的全芯片、单元级功率签核工具的文本命令语法，按功能分类，每章内按字母顺序列出命令。
+`jsonl/voltustxtcmdref__211.jsonl` — Voltus 文本命令参考手册，描述 Voltus IC Power Integrity Solution 的全芯片、单元级功率签核工具的文本命令语法，按功能分类，每章内按字母顺序列出命令。
 
 ### voltusUG__211
-Voltus 用户指南，描述如何使用 Voltus IC Power Integrity Solution 工具对 ASIC 设计进行门级功率网格分析，以确定功率网格是否充分。
+`jsonl/voltusUG__211.jsonl` — Voltus 用户指南，描述如何使用 Voltus IC Power Integrity Solution 工具对 ASIC 设计进行门级功率网格分析，以确定功率网格是否充分。
 
 ---
 

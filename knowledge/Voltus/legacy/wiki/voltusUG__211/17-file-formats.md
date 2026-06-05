@@ -1,5 +1,5 @@
 ---
-source: knowledge/Voltus/legacy/json/voltusUG__211 | chapters: [0330, 0331, 0332, 0333]
+source: knowledge/Voltus/legacy/jsonl/voltusUG__211.jsonl | entries: [0330, 0331, 0332, 0333]
 ---
 
 # 文件格式参考

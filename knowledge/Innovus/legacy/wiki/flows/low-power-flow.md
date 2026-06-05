@@ -1,5 +1,5 @@
 ---
-source: knowledge/Innovus/legacy/json/innovusUG__211 | chapters: [0357, 0359, 0367, 0370, 0373, 0374, 0376, 0377, 0378, 0379, 0380]
+source: knowledge/Innovus/legacy/jsonl/innovusUG__211.jsonl | entries: [0357, 0359, 0367, 0370, 0373, 0374, 0376, 0377, 0378, 0379, 0380]
 ---
 
 # Innovus 低功耗设计流程

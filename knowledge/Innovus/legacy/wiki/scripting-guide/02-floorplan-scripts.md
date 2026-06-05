@@ -1,6 +1,6 @@
 ---
-source: knowledge/Innovus/legacy/json/innovusTCR__211 | chapters: [0282, 0316, 0318, 0335]
-source: knowledge/Innovus/legacy/json/dbSchema__211 | chapters: [inst, pBlkg, rBlkg]
+source: knowledge/Innovus/legacy/jsonl/innovusTCR__211.jsonl | entries: [0282, 0316, 0318, 0335]
+source: knowledge/Innovus/legacy/jsonl/dbSchema__211.jsonl | entries: [0026, 0036, 0050]
 ---
 
 # Floorplan 脚本指南

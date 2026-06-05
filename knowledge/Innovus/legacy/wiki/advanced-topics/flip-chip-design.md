@@ -1,5 +1,5 @@
 ---
-source: knowledge/Innovus/legacy/json/innovusUG__211 | chapters: [0725, 0731, 0732, 0733, 0734, 0735, 0740, 0741, 0742, 0743]
+source: knowledge/Innovus/legacy/jsonl/innovusUG__211.jsonl | entries: [0725, 0731, 0732, 0733, 0734, 0735, 0740, 0741, 0742, 0743]
 ---
 
 # Flip Chip Design

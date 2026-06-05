@@ -1,5 +1,5 @@
 ---
-source: knowledge/Voltus/legacy/json/voltustxtcmdref__211 | chapters: [0107]
+source: knowledge/Voltus/legacy/jsonl/voltustxtcmdref__211.jsonl | entries: [0107]
 ---
 
 # Voltus 功耗分析学习笔记：Flow Vector Less

@@ -1,6 +1,6 @@
 ---
-source: knowledge/Innovus/legacy/json/innovusTCR__211 | chapters: [0073, 0076, 0043, 0045]
-source: knowledge/Innovus/legacy/json/dbSchema__211 | chapters: [0026, 0034, 0027, 0063]
+source: knowledge/Innovus/legacy/jsonl/innovusTCR__211.jsonl | entries: [0073, 0076, 0043, 0045]
+source: knowledge/Innovus/legacy/jsonl/dbSchema__211.jsonl | entries: [0026, 0034, 0027, 0063]
 ---
 
 # DB API 核心速查
@@ -11,8 +11,8 @@ Innovus 数据库查询和修改的核心命令：`dbGet` 和 `dbSet`。
 
 | 命令 | 属性定义位置 | 说明 |
 |------|-----------|------|
-| `dbGet` / `dbSet` | [dbSchema__211/](../json/dbSchema__211/) | 每个对象类型对应一个 JSON 文件，列出所有属性、类型、是否可编辑 |
-| `get_property` | [innovusTCR__211/chapter_0043.json](../json/innovusTCR__211/chapter_0043.json) | 所有支持对象类型的属性列表 |
+| `dbGet` / `dbSet` | `knowledge/Innovus/legacy/jsonl/dbSchema__211.jsonl` entries index=0026/0034 | 每个对象类型对应一个 JSONL entry，列出所有属性、类型、是否可编辑 |
+| `get_property` | `knowledge/Innovus/legacy/jsonl/innovusTCR__211.jsonl` entry index=0043 | 所有支持对象类型的属性列表 |
 
 ---
 

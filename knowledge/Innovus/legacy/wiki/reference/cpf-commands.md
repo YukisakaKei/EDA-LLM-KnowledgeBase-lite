@@ -1,5 +1,5 @@
 ---
-source: knowledge/Innovus/legacy/json/innovusUG__211 | chapters: [0360, 0361, 0362, 0363, 0364, 0365, 0366, 0367, 0368]
+source: knowledge/Innovus/legacy/jsonl/innovusUG__211.jsonl | entries: [0360, 0361, 0362, 0363, 0364, 0365, 0366, 0367, 0368]
 ---
 
 # CPF 命令参考

@@ -1,5 +1,5 @@
 ---
-source: knowledge/Innovus/legacy/json/innovusUG__211 | chapters: [21, 69, 72, 445, 1058]
+source: knowledge/Innovus/legacy/jsonl/innovusUG__211.jsonl | entries: [21, 69, 72, 445, 1058]
 ---
 
 # 多 CPU 处理
