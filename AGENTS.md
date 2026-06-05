@@ -17,6 +17,8 @@
 
 从 [INDEX.md](INDEX.md) 出发，定位目标板块（STA / PrimeTime / Innovus 等），进入对应子知识库的 `INDEX.md`。
 
+Windows/PowerShell 环境读取中文 Markdown/JSON/JSONL 时，必须显式使用 UTF-8（如 `Get-Content -Encoding UTF8`），避免无 BOM 文件被按本地 ANSI 解码。
+
 ### 阅读优先级（重要）
 
 `row/` 和 `json/` 只读，不得修改。
