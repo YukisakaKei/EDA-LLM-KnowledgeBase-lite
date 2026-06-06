@@ -11,16 +11,43 @@
 
     "bash": {
       "ls *": "allow",
+      "Get-ChildItem *": "allow",
       "pwd *": "allow",
+      "Get-Location *": "allow",
       "tree *": "allow",
 
       "cat *": "allow",
+      "Get-Content *": "allow",
       "head *": "allow",
       "tail *": "allow",
 
       "find *": "allow",
       "rg *": "allow",
       "grep *": "allow",
+      "Select-String *": "allow",
+
+      "Test-Path *": "allow",
+      "Get-Command *": "allow",
+      "Resolve-Path *": "allow",
+      "Split-Path *": "allow",
+      "Join-Path *": "allow",
+      "ConvertFrom-Json *": "allow",
+      "ConvertTo-Json *": "allow",
+      "Select-Object *": "allow",
+      "Where-Object *": "allow",
+      "ForEach-Object *": "allow",
+      "Sort-Object *": "allow",
+      "Group-Object *": "allow",
+      "Measure-Object *": "allow",
+      "New-Item *": "allow",
+      "Remove-Item *": "allow",
+      "Rename-Item *": "allow",
+      "Copy-Item *": "allow",
+      "Move-Item *": "allow",
+      "Set-Content *": "allow",
+      "Add-Content *": "allow",
+      "Out-File *": "allow",
+      "Write-Output *": "allow",
 
       "git log *": "allow",
       "git status *": "allow",
@@ -34,8 +61,10 @@
 
       "git *": "ask",
 
-      "python *": "ask",
-      "python3 *": "ask",
+      "python -m pip *": "ask",
+
+      "python *": "allow",
+      "python3 *": "allow",
       "uv *": "ask",
 
       "node *": "ask",
