@@ -22,6 +22,16 @@
       "rg *": "allow",
       "grep *": "allow",
 
+      "git log *": "allow",
+      "git status *": "allow",
+      "git diff *": "allow",
+      "git show *": "allow",
+      "git blame *": "allow",
+      "git remote *": "allow",
+      "git branch *": "allow",
+      "git stash list *": "allow",
+      "git stash show *": "allow",
+
       "git *": "ask",
 
       "python *": "ask",
