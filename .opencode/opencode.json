@@ -1,0 +1,49 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+
+  "permission": {
+    "read": "allow",
+    "list": "allow",
+    "glob": "allow",
+    "grep": "allow",
+
+    "edit": "ask",
+
+    "bash": {
+      "ls *": "allow",
+      "pwd *": "allow",
+      "tree *": "allow",
+
+      "cat *": "allow",
+      "head *": "allow",
+      "tail *": "allow",
+
+      "find *": "allow",
+      "rg *": "allow",
+      "grep *": "allow",
+
+      "git *": "ask",
+
+      "python *": "ask",
+      "python3 *": "ask",
+      "uv *": "ask",
+
+      "node *": "ask",
+      "npm *": "ask",
+      "pnpm *": "ask",
+      "yarn *": "ask",
+
+      "docker *": "ask",
+      "kubectl *": "ask",
+
+      "*": "ask"
+    },
+
+    "webfetch": "ask",
+    "websearch": "ask",
+
+    "external_directory": "ask",
+
+    "task": "ask"
+  }
+}
