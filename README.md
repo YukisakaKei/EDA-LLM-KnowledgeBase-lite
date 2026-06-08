@@ -22,15 +22,15 @@
 
 不需了解目录结构和索引体系，直接把文档丢进 `workspace/` 切片后提问。
 
-切片的目的：将文档拆成结构化 JSON，让 AI 能像翻书一样在文件中自由搜索。提问时不需要你告诉 AI 去哪找、搜什么关键词——AI 会根据你的问题自己联想关键词、自己定位相关文件。
+切片的目的：将文档拆成结构化 JSONL，让 AI 能像翻书一样在文件中自由搜索。提问时不需要你告诉 AI 去哪找、搜什么关键词——AI 会根据你的问题自己联想关键词、自己定位相关文件。
 
 1. 将文档文件/文件夹放入 `workspace/`
 
 2. 切片：
 
-> 对 workspace/my_manual.pdf 进行切片，优先判断已有技能是否适用，不适用的话参考 scripts/pdf_slicer.py，把文件切片成类似 knowledge/Innovus/legacy/json/innovusUG__211 的 json 文件
+> 对 workspace/my_manual.pdf 进行切片，优先使用 /slice-pdf，输出为 workspace/my_manual.jsonl
 
-> 对 workspace/my_docs/ 下的 HTML 进行切片，优先判断已有技能是否适用，不适用的话参考 scripts/html_slicer.py，把文件切片成类似 knowledge/Innovus/legacy/json/innovusUG__211 的 json 文件
+> 对 workspace/my_docs/ 下的 HTML 进行切片，优先使用 /slice-html，输出为 workspace/my_docs.jsonl
 
 3. 提问和编写 EDA 脚本（AI 自动联想关键词并搜索文件）：
 
@@ -50,23 +50,19 @@
 
 ### PDF 手册（官方 User Guide / Command Reference）
 
-> 帮我切片 knowledge/Innovus/legacy/row/innovusUG__211 下的 PDF，自动解析目录，输出 json 到 knowledge/Innovus/legacy/json/innovusUG__211
+> 帮我切片 knowledge/Innovus/legacy/row/innovusUG__211 下的 PDF，自动解析目录，输出 JSONL 到 knowledge/Innovus/legacy/jsonl/innovusUG__211.jsonl
 
-> 把 knowledge/PrimeTime/row/pt_ug.pdf 切片，只切第 3 章到第 8 章
+> 把 workspace/my_manual.pdf 切片，只切第 3 章到第 8 章，输出为 workspace/my_manual.jsonl
 
 ### Confluence 导出的 HTML 手册
 
-> 切片 knowledge/Voltus/legacy/row/voltus_confluence/ 下的 HTML，TOC 在 index.html 里
-
-### Man Page 格式的 HTML（S 家 htmlView）
-
-> 切片 knowledge/PrimeTime/row/htmlView_20/command/ 下所有 HTML，输出到 knowledge/PrimeTime/json/htmlView_20/command/
+> 切片 knowledge/Voltus/legacy/row/voltus_confluence/ 下的 HTML，TOC 在 index.html 里，输出 JSONL 到 knowledge/Voltus/legacy/jsonl/voltus_confluence.jsonl
 
 ### 切片后整理快速参考
 
-切片完成后，可让 AI 从 JSON 提炼 wiki 快速参考（后续问答优先使用）：
+切片完成后，可让 AI 从 JSONL 提炼 wiki 快速参考（后续问答优先使用）：
 
-> 根据 knowledge/Innovus/legacy/json/innovusUG__211 的内容，在 knowledge/Innovus/legacy/wiki/ 下整理快速参考
+> 根据 knowledge/Innovus/legacy/jsonl/innovusUG__211.jsonl 的内容，在 knowledge/Innovus/legacy/wiki/ 下整理快速参考
 
 ---
 
@@ -80,9 +76,9 @@
 
 ### 指定范围提问（限定在某份文档内）
 
-> 根据 knowledge/Innovus/legacy/json/innovusUG__211 回答：floorplan 相关的命令有哪些？
+> 根据 knowledge/Innovus/legacy/jsonl/innovusUG__211.jsonl 回答：floorplan 相关的命令有哪些？
 
-> 在 knowledge/PrimeTime/json 范围内，查一下 OCV 和 AOCV 的用法区别
+> 在 knowledge/Voltus/legacy/jsonl 范围内，查一下 IR Drop 分析需要哪些输入
 
 ---
 

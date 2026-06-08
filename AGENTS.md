@@ -15,24 +15,23 @@
 
 ### 导航入口
 
-从 [INDEX.md](INDEX.md) 出发，定位目标板块（STA / PrimeTime / Innovus 等），进入对应子知识库的 `INDEX.md`。
+从 [INDEX.md](INDEX.md) 出发，定位目标板块（Innovus / Voltus / eda_formats 等），进入对应子知识库的 `INDEX.md`。
 
-Windows/PowerShell 环境读取中文 Markdown/JSON/JSONL 时，必须显式使用 UTF-8（如 `Get-Content -Encoding UTF8`），避免无 BOM 文件被按本地 ANSI 解码。
+Windows/PowerShell 环境读取中文 Markdown/JSONL 时，必须显式使用 UTF-8（如 `Get-Content -Encoding UTF8`），避免无 BOM 文件被按本地 ANSI 解码。
 
 ### 阅读优先级（重要）
 
-`row/`、`jsonl/` 和旧 `json/` 只读，不得修改。
+`row/` 和 `jsonl/` 只读，不得修改。
 
 ```
-wiki（优先）→ jsonl（次之）→ json（仅未迁移遗留板块）→ row（最后，仅当前面内容有缺失时）
+wiki（优先）→ jsonl（次之）→ row（最后，仅当前面内容有缺失时）
 ```
 
-- **wiki/** — 从 JSONL/JSON 提炼的快速参考，优先阅读，速度最快
-- **jsonl/** — 已迁移板块的完整切片内容，wiki 无法解决时阅读；按 `index` 定位单行记录
-- **json/** — 未迁移遗留板块的完整切片内容；已迁移板块中的旧 `json/` 仅作迁移对照和回滚依据
-- **row/** — 原始 PDF/源文件，**仅当 jsonl/json 内容有缺失或错误时才读**，并须向用户反馈中间层存在问题
+- **wiki/** — 从 JSONL 提炼的快速参考，优先阅读，速度最快
+- **jsonl/** — 完整切片内容，wiki 无法解决时阅读；按 `index` 定位单行记录
+- **row/** — 原始 PDF/源文件，**仅当 jsonl 内容有缺失或错误时才读**，并须向用户反馈中间层存在问题
 
-`jsonl/` 与 `row/` 通过**文件名/目录名匹配**对应：`legacy/jsonl/innovusUG__211.jsonl` 对应 `legacy/row/innovusUG__211`，以此类推。未迁移遗留 `json/` 仍按目录名匹配：`PrimeTime/json/htmlView_20/topic/` 对应其源目录。
+`jsonl/` 与 `row/` 通过**文件名/目录名匹配**对应：`legacy/jsonl/innovusUG__211.jsonl` 对应 `legacy/row/innovusUG__211`，以此类推。
 
 
 ## 知识库开发流程
@@ -43,17 +42,15 @@ wiki（优先）→ jsonl（次之）→ json（仅未迁移遗留板块）→ r
 
 - **row/** — 存放原始 PDF（只读，不修改）
 - **jsonl/** — 存放切片输出的 JSONL（只读，不修改）
-- **json/** — 存放未迁移遗留 JSON，或已迁移板块的对照/回滚副本（只读，不修改）
-- **wiki/** — 存放从 JSONL/JSON 提炼的快速参考（可更新）
+- **wiki/** — 存放从 JSONL 提炼的快速参考（可更新）
 
 ### wiki 内容规范
 
-wiki 文件开头须声明来源，`source` 为对应的 JSONL 文件路径；未迁移遗留板块可继续引用旧 JSON 路径。`source` 可为多行：
+wiki 文件开头须声明来源，`source` 为对应的 JSONL 文件路径。`source` 可为多行：
 
 ```markdown
 ---
 source: knowledge/Innovus/legacy/jsonl/innovusUG__211.jsonl | entries: [0122, 0123]
-source: knowledge/PrimeTime/json/htmlView_20/topic | entries: [0009, 0017]
 ---
 ```
 
