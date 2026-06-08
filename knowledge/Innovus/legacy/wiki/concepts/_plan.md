@@ -2,7 +2,7 @@
 
 JSONL 文件：`knowledge/Innovus/legacy/jsonl/innovusUG__211.jsonl`
 
-**数据来源**：从 toc.json 验证的真实章节号和标题
+**数据来源**：从 JSONL entry 的 index/title 验证的真实章节号和标题
 
 ---
 
@@ -168,7 +168,7 @@ JSONL 文件：`knowledge/Innovus/legacy/jsonl/innovusUG__211.jsonl`
 
 创建 wiki 文件前，需验证：
 
-- [ ] 所有章节号从 toc.json 确认无误
+- [ ] 所有章节号从 JSONL entry 的 index/title 确认无误
 - [ ] 每个文件的章节号范围合理（无重复、无遗漏）
 - [ ] 章节标题准确反映内容主题
 - [ ] 提取重点与 wiki 文件目标对齐

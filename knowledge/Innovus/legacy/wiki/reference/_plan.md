@@ -2,7 +2,7 @@
 
 JSONL 文件：`knowledge/Innovus/legacy/jsonl/innovusUG__211.jsonl`
 
-**数据来源**：从 toc.json 验证的真实章节号和标题
+**数据来源**：从 JSONL entry 的 index/title 验证的真实章节号和标题
 
 ---
 
@@ -127,7 +127,7 @@ JSONL 文件：`knowledge/Innovus/legacy/jsonl/innovusUG__211.jsonl`
 
 ## 验证清单
 
-- [ ] 所有章节号已从 toc.json 验证
+- [ ] 所有章节号已从 JSONL entry 的 index/title 验证
 - [ ] 无虚构的章节号或标题
 - [ ] 每个文件的提取章节覆盖了规划中的内容范围
 - [ ] 章节号按升序排列

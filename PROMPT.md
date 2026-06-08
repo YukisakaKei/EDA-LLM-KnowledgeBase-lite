@@ -6,7 +6,7 @@
 我希望agent能借用这个项目掌握一定的211版本 innovus legacy版本脚本的编写能力，所以需要你在wiki下编写一个类似于语法参考指南的文档。
 可以参考的文件有
 1. knowledge\Innovus\legacy\eda_scripts\innovus_gift__211，存放了一些验证过的脚本，语法正确
-2. knowledge\Innovus\legacy\json下的*211文件切片，我认为价值比较高的是knowledge\Innovus\legacy\json\dbSchema__211和knowledge\Innovus\legacy\json\innovusTCR__211
+2. knowledge\Innovus\legacy\jsonl 下的 *211 JSONL 切片，我认为价值比较高的是 knowledge\Innovus\legacy\jsonl\dbSchema__211.jsonl 和 knowledge\Innovus\legacy\jsonl\innovusTCR__211.jsonl
 3. innovus中使用dbGet获得inst、net、pin等等，使用dbShape计算形状
 4. 可以创建一个文件夹，编写不同类型的脚本指南，常见的有eco类型（插buf等）、floorplan类型（加placeblockage、routeblockage等）、report类型（寻找特定的hport等）、skew类型（对制定的reg定制insertion delay等）
 首先在knowledge\Innovus\legacy\wiki下生成文件夹和计划文件(markdown格式)，供我查看

@@ -2,7 +2,7 @@
 
 JSONL 文件：`knowledge/Innovus/legacy/jsonl/innovusUG__211.jsonl`
 
-**数据来源**：章节号和标题均从 `toc.json` 验证，不含虚构内容。
+**数据来源**：章节号和标题均从 JSONL entry 的 `index` / `title` 验证，不含虚构内容。
 
 ---
 
