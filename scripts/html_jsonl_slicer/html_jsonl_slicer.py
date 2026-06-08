@@ -9,10 +9,12 @@ from typing import Any
 
 CURRENT_DIR = Path(__file__).resolve().parent
 SCRIPTS_DIR = CURRENT_DIR.parent
+if str(CURRENT_DIR) not in sys.path:
+    sys.path.insert(0, str(CURRENT_DIR))
 if str(SCRIPTS_DIR) not in sys.path:
     sys.path.insert(0, str(SCRIPTS_DIR))
 
-from html_slicer import extract_chapter_content, parse_toc  # noqa: E402
+from html_extractor import extract_chapter_content, parse_toc  # noqa: E402
 from jsonl_utils.jsonl_utils import write_jsonl  # noqa: E402
 
 

@@ -1,15 +1,9 @@
 ﻿"""
-html_slicer.py -- Confluence HTML manual slicer
+Extraction helpers for Confluence HTML manuals.
 
-Usage:
-    python html_slicer.py <html_dir> <output_dir> --toc <toc_file> [--from N] [--to M] [--skip-empty]
 """
 
-import argparse
-import json
 import re
-import sys
-from pathlib import Path
 
 from bs4 import BeautifulSoup, NavigableString, Tag
 
@@ -360,82 +354,3 @@ def extract_chapter_content(html_path: str, anchor: str = None) -> list:
     return _iter_content(tmp)
 
 
-# ---------------------------------------------------------------------------
-# Main
-# ---------------------------------------------------------------------------
-
-def main():
-    parser = argparse.ArgumentParser(description='Confluence HTML manual slicer')
-    parser.add_argument('html_dir', help='Directory containing HTML chapter files')
-    parser.add_argument('output_dir', help='Output directory for JSON files')
-    parser.add_argument('--toc', required=True, help='Path to TOC HTML file')
-    parser.add_argument('--from', dest='from_n', type=int, default=1, metavar='N',
-                        help='Start from chapter N (1-based, default 1)')
-    parser.add_argument('--to', dest='to_n', type=int, default=None, metavar='M',
-                        help='End at chapter M (inclusive, default all)')
-    parser.add_argument('--skip-empty', action='store_true',
-                        help='Skip chapters with no extracted content')
-    args = parser.parse_args()
-
-    html_dir = Path(args.html_dir)
-    output_dir = Path(args.output_dir)
-    output_dir.mkdir(parents=True, exist_ok=True)
-
-    print(f'Parsing TOC: {args.toc}')
-    chapters = parse_toc(args.toc)
-    print(f'Found {len(chapters)} chapter entries')
-
-    from_n = args.from_n
-    to_n = args.to_n if args.to_n is not None else len(chapters)
-    chapters = [c for c in chapters if from_n <= c['index'] <= to_n]
-
-    doc_name = output_dir.name
-    toc_entries = []
-    written = 0
-    skipped = 0
-
-    for ch in chapters:
-        html_file = html_dir / ch['file']
-        if not html_file.exists():
-            print(f'  [WARN] file not found, skipping: {ch["file"]}')
-            skipped += 1
-            continue
-
-        content = extract_chapter_content(str(html_file), ch['anchor'])
-
-        if args.skip_empty and not content:
-            print(f'  [SKIP] empty chapter: {ch["title"]}')
-            skipped += 1
-            continue
-
-        out_file = f'chapter_{ch["index"]:04d}.json'
-        chapter_json = {
-            'index': ch['index'],
-            'title': ch['title'],
-            'depth': ch['depth'],
-            'file': ch['file'],
-            'content': content,
-        }
-        with open(output_dir / out_file, 'w', encoding='utf-8') as f:
-            json.dump(chapter_json, f, ensure_ascii=False, indent=2)
-
-        toc_entries.append({
-            'index': ch['index'],
-            'title': ch['title'],
-            'depth': ch['depth'],
-            'parent': ch['parent'],
-            'file': out_file,
-            'source_file': ch['file'],
-        })
-        written += 1
-        print(f'  [{ch["index"]:04d}] {ch["title"]} ({len(content)} items)')
-
-    toc = {'doc': doc_name, 'chapters': toc_entries}
-    with open(output_dir / 'toc.json', 'w', encoding='utf-8') as f:
-        json.dump(toc, f, ensure_ascii=False, indent=2)
-
-    print(f'\nDone: {written} written, {skipped} skipped -> {output_dir}')
-
-
-if __name__ == '__main__':
-    main()

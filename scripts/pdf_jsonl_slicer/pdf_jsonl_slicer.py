@@ -12,11 +12,13 @@ import pdfplumber
 
 CURRENT_DIR = Path(__file__).resolve().parent
 SCRIPTS_DIR = CURRENT_DIR.parent
+if str(CURRENT_DIR) not in sys.path:
+    sys.path.insert(0, str(CURRENT_DIR))
 if str(SCRIPTS_DIR) not in sys.path:
     sys.path.insert(0, str(SCRIPTS_DIR))
 
 from jsonl_utils.jsonl_utils import write_jsonl  # noqa: E402
-from pdf_slicer import (  # noqa: E402
+from pdf_extractor import (  # noqa: E402
     _build_ocr_engine,
     build_chapters_pages,
     build_chapters_precise,

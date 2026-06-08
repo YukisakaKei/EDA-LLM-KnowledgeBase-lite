@@ -48,7 +48,7 @@ def _normalize_table_data(value: Any) -> list[list[str]]:
 
 
 def normalize_content(content: Any) -> list[Any]:
-    """Normalize legacy content blocks into the JSONL content-block shape."""
+    """Normalize content blocks into the JSONL content-block shape."""
     if content is None:
         return []
     if not isinstance(content, list):
