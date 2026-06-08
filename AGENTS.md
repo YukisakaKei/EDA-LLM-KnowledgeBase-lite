@@ -36,26 +36,8 @@ wiki（优先）→ jsonl（次之）→ row（最后，仅当前面内容有缺
 
 ## 知识库开发流程
 
-### PDF 切片
+知识库开发流程、目录结构、文件命名、wiki 规范、eda_scripts 规范和新增板块检查清单，统一以 [specs/sub-knowledge-base.md](specs/sub-knowledge-base.md) 为准。
 
-使用技能 `/slice-pdf` 对 PDF 进行切片。
-
-- **row/** — 存放原始 PDF（只读，不修改）
-- **jsonl/** — 存放切片输出的 JSONL（只读，不修改）
-- **wiki/** — 存放从 JSONL 提炼的快速参考（可更新）
-
-### wiki 内容规范
-
-wiki 文件开头须声明来源，`source` 为对应的 JSONL 文件路径。`source` 可为多行：
-
-```markdown
----
-source: knowledge/Innovus/legacy/jsonl/innovusUG__211.jsonl | entries: [0122, 0123]
----
-```
-
-### 新增知识板块
-
-按 [project-structure-plan.md](project-structure-plan.md) 中的模板套用目录结构。
+进行 PDF/HTML 切片、JSONL 整理、wiki 快速参考编写或新增知识板块前，先阅读该规范，避免在 AGENTS.md 中重复维护流程定义。
 
 ---
