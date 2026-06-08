@@ -40,7 +40,7 @@
 
 编写脚本（先出思路方案，审查通过后再写脚本）：
 
-> 参考 workspace/my_manual_json/ 的内容，帮我写一个 Innovus proc：输入一个 pin 名，找到该 pin 驱动的所有 buffer/inverter，计算这些 buffer/inverter 所有输出 net 的总 wiring length。先参考 workspace/script_plan_refs/getConnectedBufInvNetLength_plan.md 的 markdown 结构与写法，输出一个 markdown 到 workspace/ 说明实现思路，等我审查确认后再写脚本
+> 参考 workspace/my_manual_json/ 的内容，帮我写一个 Innovus proc：输入一个 pin 名，找到该 pin 驱动的所有 buffer/inverter，计算这些 buffer/inverter 所有输出 net 的总 wiring length。先参考 specs/script_plan_refs/getConnectedBufInvNetLength_plan.md 的 markdown 结构与写法，输出一个 markdown 到 workspace/ 说明实现思路，等我审查确认后再写脚本
 
 ---
 
@@ -85,7 +85,7 @@
 ## 三、生成/修改 EDA 脚本
 
 生成的脚本默认输出到 `workspace/` 目录。
-脚本方案/提示词参考文档放在 `workspace/script_plan_refs/`，可在提示词中明确要求 AI 参考其中范例，先输出 markdown 方案，再继续写脚本。
+脚本方案/提示词参考文档放在 `specs/script_plan_refs/`，可在提示词中明确要求 AI 参考其中范例，先输出 markdown 方案，再继续写脚本。
 
 ### 带规范要求生成
 
@@ -103,4 +103,4 @@
 
 ## 四、新增知识板块
 
-> 我想新增一个 Genus 综合工具的知识板块，按 project-structure-plan.md 的模板帮我创建目录结构，并更新 INDEX.md
+> 我想新增一个 Genus 综合工具的知识板块，按 specs/sub-knowledge-base.md 的规范帮我创建目录结构，并更新 INDEX.md
