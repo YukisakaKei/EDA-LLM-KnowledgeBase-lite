@@ -187,12 +187,9 @@ proc getInstCenter {instName} {
         error "Instance $instName not found"
     }
     
-    set box [dbGet $inst.box]
+    set box [lindex [dbGet $inst.box] 0]
     # box 格式：{llx lly urx ury}
-    set llx [lindex $box 0]
-    set lly [lindex $box 1]
-    set urx [lindex $box 2]
-    set ury [lindex $box 3]
+    lassign $box llx lly urx ury
     
     set centerX [expr ($llx + $urx) / 2.0]
     set centerY [expr ($lly + $ury) / 2.0]
@@ -212,14 +209,11 @@ Puts "Instance center: [lindex $center 0], [lindex $center 1]"
 ### Box 解构
 
 ```tcl
-# dbGet 返回的 box 是 4 元素列表：{llx lly urx ury}
+# dbGet $inst.box 常见返回 {{llx lly urx ury}}，外层 list 是查询结果列表
 set inst [lindex [dbGet top.insts.name inst1 -p] 0]
-set box [dbGet $inst.box]
+set box [lindex [dbGet $inst.box] 0]
 
-set llx [lindex $box 0]
-set lly [lindex $box 1]
-set urx [lindex $box 2]
-set ury [lindex $box 3]
+lassign $box llx lly urx ury
 
 Puts "Instance box: ($llx, $lly) to ($urx, $ury)"
 
@@ -247,8 +241,8 @@ createPlaceBlockage -box [join $boxList " "] -type hard
 
 # 方法 3：从 dbGet 结果直接使用
 set inst [lindex [dbGet top.insts.name macro1 -p] 0]
-set box [dbGet $inst.box]
-createPlaceBlockage -box [join $box " "] -type hard
+set box [lindex [dbGet $inst.box] 0]
+createPlaceBlockage -box $box -type hard
 ```
 
 ---

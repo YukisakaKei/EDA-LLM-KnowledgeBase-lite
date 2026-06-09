@@ -62,17 +62,15 @@ deleteHaloFromBlock -allBlock
 ```tcl
 # 遍历所有 hard macro，在其上方创建布线阻塞
 foreach inst [dbGet -p2 top.insts.cell.baseClass block] {
-    set box [dbGet $inst.box]
-    # dbGet 返回的 box 是列表格式，需要用 join 展开
-    eval "createRouteBlk -box [join $box] -layer {metal2 metal3}"
+    set box [lindex [dbGet $inst.box] 0]
+    createRouteBlk -box $box -layer {metal2 metal3}
 }
 ```
 
 **说明**：
 - `dbGet -p2 top.insts.cell.baseClass block` 返回所有 hard macro 的 inst 指针列表
-- `dbGet $inst.box` 返回 inst 的边界框坐标 `{x1 y1 x2 y2}`
-- `join` 将列表展开为空格分隔的字符串
-- `eval` 执行拼接后的命令字符串
+- `dbGet $inst.box` 常见返回值为 `{{x1 y1 x2 y2}}`，外层 list 代表查询结果列表
+- 先用 `lindex ... 0` 取出单个 box，再传给 `-box`
 
 ### 场景 2：创建 partial blockage 控制密度
 
@@ -143,14 +141,14 @@ createRouteBlk -box {1000 1000 2000 2000} -layer metal1 -pgnetonly
 ```tcl
 # 为所有 macro 周围创建扩展的 route blockage
 foreach inst [dbGet -p2 top.insts.cell.baseClass block] {
-    set box [dbGet $inst.box]
+    set box [lindex [dbGet $inst.box] 0]
     lassign $box x1 y1 x2 y2
     
     # 扩展 5 微米
-    set x1 [expr $x1 - 5]
-    set y1 [expr $y1 - 5]
-    set x2 [expr $x2 + 5]
-    set y2 [expr $y2 + 5]
+    set x1 [expr {$x1 - 5}]
+    set y1 [expr {$y1 - 5}]
+    set x2 [expr {$x2 + 5}]
+    set y2 [expr {$y2 + 5}]
     
     createRouteBlk -box "$x1 $y1 $x2 $y2" -layer metal2
 }
@@ -195,12 +193,14 @@ createPlaceBlockage -box {100 200 300 400}
 # 正确：字符串格式（需要引号）
 createPlaceBlockage -box "100 200 300 400"
 
-# 错误：直接传递 dbGet 返回的列表（需要 join）
+# 错误：直接拆解 dbGet 返回值，x1 会拿到整个 box 字符串
 set box [dbGet $inst.box]
-createRouteBlk -box $box  # ❌ 错误
+lassign $box x1 y1 x2 y2  # ❌ 错误
 
-# 正确：使用 eval + join
-eval "createRouteBlk -box [join $box]"  # ✓ 正确
+# 正确：先去掉查询结果的外层 list
+set box [lindex [dbGet $inst.box] 0]
+lassign $box x1 y1 x2 y2
+createRouteBlk -box $box  # ✓ 正确
 ```
 
 ### 3. halo 方向性
