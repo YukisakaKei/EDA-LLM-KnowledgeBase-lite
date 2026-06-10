@@ -1,5 +1,5 @@
 ---
-source: knowledge/Voltus/legacy/jsonl/voltustxtcmdref__211.jsonl | entries: [0095, 0107, 0422]
+source: knowledge/Voltus/legacy/jsonl/voltustxtcmdref__211.jsonl | entries: [0095, 0107, 0119, 0154, 0157, 0422]
 source: knowledge/Voltus/cui/jsonl/voltusTCRcom__211.jsonl | entries: [0313, 0381]
 source: knowledge/Voltus/legacy/jsonl/voltusUG__211.jsonl | entries: [0133, 0165, 0206, 0240]
 ---
@@ -33,6 +33,52 @@ Voltus 的电流文件通常是 `report_power` 生成、再由 rail analysis 通
 | `dynamic_powerup_<powerup_net>_<always-on_net>.ptiavg` | What-if / power-gate flow | power-up 场景下的电流波形文件。 |
 | `voltus_rail_pad.tran.ptiavg` | off-chip package tracing | switched net bump current / bump voltage waveform。 |
 | `.ptimax` / `.ptirms` / `.ptiavg` | Library Simulator `pwrnet tallyint` | 分别表示接到 voltage source 的器件 peak dynamic current、RMS current、average current；这类不是常规 `report_power` 的主流输出。 |
+
+## 用 `query_power_data` 查看/导出 `.ptiavg` 内容
+
+`query_power_data` 是 Voltus 内置的 PTI 二进制文件查询工具，可用于查看 Power Calculation / Rail Analysis 生成的 `.ptiavg` / `.ptipeak` 文件内容。虽然命令说明主要以 current / tap current 描述，但其输入参数也明确覆盖 VDD/VSS instance voltage PTI files，因此它也可用于查看动态 rail 结果中的 instance voltage waveform。
+
+一个典型工程问题是：在 CTS cell 上，单个 clock cycle 内有效电压 `VDD - VSS` 的峰峰变化量是多少。也就是：
+
+```text
+ΔVpp(cycle) = max(VDD - VSS) - min(VDD - VSS)
+```
+
+这个值可用于 PLL / clock jitter 相关分析。Voltus 有内建的 cycle-to-cycle EIV / jitter 分析流程；但当需要按自定义 CTS instance 列表抽取原始电压波形并自行计算 `ΔVpp` 时，可用 `query_power_data` 将 VDD/VSS voltage `.ptiavg` 导出为 PWL，再做后处理。
+
+单个 instance 的有效电压波形可用 `view_dynamic_waveform -type voltage -effective_voltage_waveform` 做可视化确认；批量统计仍建议使用 `query_power_data` 导出 PWL 后处理。
+
+常用场景：
+
+| 目标 | Legacy 命令参数 | 导出/生成的数据 |
+|---|---|---|
+| 列出 PTI 文件中的 tap / instance 名称 | `-list [-pin]` | 名称列表；`-pin` 会带 pin 名，适合先确认可查询对象名。 |
+| 导出指定 instance 的波形 | `-dump_pwl -instance_list_file inst.list` | ASCII PWL 文本，适合再转换为 CSV。输入 current PTI 时值为 current；输入 voltage PTI 时按 voltage waveform 理解。 |
+| 导出平均值 | `-average_current` | 每个 instance/tap 的平均 current 统计值。 |
+| 导出峰值和峰值时间 | `-peak_current -peak_time` | 每个 instance/tap 的 peak current 与发生时间。 |
+| 按时间步汇总 | `-time_steps` | 每个 interval 的 min / max / average / total current 摘要，用于定位 transient worst window。 |
+| 生成总电流波形 | `-total_current input.ptiavg -output out_name` | 新的 total current `.ptiavg`，可在 SimVision 中只看总电流波形。 |
+
+示例：先列出 rail voltage `.ptiavg` 中可查询的对象名。
+
+```tcl
+query_power_data VDD/VDD.ptiavg \
+    -list \
+    -pin \
+    -output vdd_voltage_pti.list
+```
+
+示例：批量导出指定 instance 的 VDD 电压波形为 PWL 文本。
+
+```tcl
+query_power_data VDD/VDD.ptiavg \
+    -dump_pwl \
+    -instance_list_file inst.list \
+    -pin \
+    -output vdd_voltage.pwl
+```
+
+若需要 effective voltage，可分别导出 VDD/VSS voltage PWL，再在脚本中按同一 timestamp 计算 `VDD - VSS`。`query_power_data` 本身导出的是 PWL/统计报告或新的 `.ptiavg`，不是直接导出 CSV；CSV 通常由后处理脚本从 PWL 转换得到。
 
 ## `current_generation_method`
 
