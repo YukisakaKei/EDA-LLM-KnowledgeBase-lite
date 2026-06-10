@@ -11,6 +11,9 @@
 ### voltusUG__211
 `jsonl/voltusUG__211.jsonl` — Voltus 用户指南，描述如何使用 Voltus IC Power Integrity Solution 工具对 ASIC 设计进行门级功率网格分析，以确定功率网格是否充分。
 
+### SimVisionUG
+`jsonl/SimVisionUG.jsonl` — Cadence SimVision User Guide，描述 SimVision 图形调试和波形查看环境，包括仿真调用、仿真数据库、Source/Design Browser、Waveform、Schematic、Memory、Transaction、Measurement 等功能，可作为 Voltus 动态波形查看相关参考。
+
 ---
 
 ## Wiki 快速参考（优先阅读）
